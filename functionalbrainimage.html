@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Brain Image and Its Generation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/premium-photo/curvy-narrow-muddy-road-dark-forest-surrounded_636537-26896.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        /* Navigation Bar Style */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+
+        header {
+            padding: 60px 20px;
+            background: rgb(11, 11, 11);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .logo {
+            width: 100px; /* Set logo size */
+            position: center;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #ff4081;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e91e63;
+            transform: scale(1.10);
+        }
+        .content {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            font-size: 3em;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.3em;
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .code-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin-bottom: 40px;
+            color: #d1d1d1;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            border-radius: 12px;
+            max-width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header id="home">
+        <img src="https://wallpaper.dog/large/20527693.jpg" alt="Logo" class="logo">
+        <h1>Functional Brain Image and Its Generation</h1>
+        <p>Analyzing brain activity through functional MRI techniques using MATLAB.</p>
+    </header>
+    <hr>
+
+    <!-- Navigation Bar Below Header -->
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="structuralbrainimage.html">Structural Imaging</a></li>
+            <li><a href="functionalbrainimage.html">Functional Imaging</a></li>
+            <li><a href="fusedimage.html">Fused Brain Image</a></li>
+            <li><a href="tablesgraphs.html">Tables & Graphs</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Functional Brain Image and Its Generation Using MATLAB</h2>
+        <p>A functional brain image highlights regions in the brain that are actively engaged during various cognitive processes. This technique is widely used in functional magnetic resonance imaging (fMRI) and positron emission tomography (PET) for studying brain activity based on oxygen levels and blood flow.</p>
+        
+        <h3><u>Generating a Functional Brain Image Using MATLAB</u></h3>
+        <p>To generate a functional brain image, we utilized MATLAB's built-in MRI dataset and simulated brain activity regions. These are the steps we followed:</p>
+        <ul>
+            <li><strong>1. Loading the MRI Dataset</strong><br>
+            We used MATLAB’s built-in MRI dataset, selecting a specific slice for overlaying functional activity regions on the anatomical brain structure.</li>
+
+            <li><strong>2. Simulating Functional Activity</strong><br>
+            Active regions in the brain were simulated using mathematical functions to create circular activity spots. These areas were color-coded to represent varying levels of brain activity.</li>
+
+            <li><strong>3. Overlaying Functional Data on Structural Image</strong><br>
+            The activity regions were overlayed on the structural image to visualize the relationship between brain anatomy and activity.</li>
+
+            <li><strong>4. Displaying the Functional Brain Image</strong><br>
+            Finally, the functional image was visualized using MATLAB’s image processing functions, creating a dynamic and color-coded display.</li>
+        </ul>
+
+        <div class="code-container">
+            <h3>MATLAB Code to Generate the Functional Brain Image</h3>
+            <pre>
+% Load a sample MRI image from MATLAB's built-in dataset
+load mri; % Built-in MRI data
+D = squeeze(D); % Convert the 4D data to 3D
+
+% Extract one slice of the brain from the dataset (same slice as structural)
+functionalImage = mat2gray(D(:,:,15)); % Slice 15
+
+% Simulate functional activity regions (e.g., active brain areas)
+[xGrid, yGrid] = meshgrid(1:size(functionalImage, 2), 1:size(functionalImage, 1));
+
+% Add functional activity in circular regions
+activity1 = ((xGrid - 40).^2 + (yGrid - 60).^2) <= 30; % First activity region
+activity2 = ((xGrid - 80).^2 + (yGrid - 100).^2) <= 20; % Second activity region
+activity3 = ((xGrid - 50).^2 + (yGrid - 140).^2) <= 25; % Third activity region
+
+% Assign activity levels (higher values for active regions)
+functionalImage(activity1) = 0.8; % Activity level 1
+functionalImage(activity2) = 0.9; % Activity level 2
+functionalImage(activity3) = 0.85; % Activity level 3
+
+% Apply a colormap to visualize activity levels in color
+figure;
+imagesc(functionalImage); % Display the functional image
+colormap(jet); % Apply the "jet" colormap (blue to red gradient)
+colorbar; % Add a colorbar to indicate activity levels
+title('Functional Brain Image with Color-Coded Activity Regions');
+axis off;
+            </pre>
+        </div>
+
+        <h3>Functional Brain Image Visualization</h3>
+        <p>The generated functional brain image is shown below, with the active regions in the brain highlighted based on their activity levels:</p>
+        
+        <div class="image-container">
+            <img src="functional.jpg" alt="Functional Brain Image">
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Brain Image Fusion Project | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

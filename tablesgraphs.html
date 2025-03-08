@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Image Fusion - Graphs and Tables</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/premium-photo/curvy-narrow-muddy-road-dark-forest-surrounded_636537-26896.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        /* Navigation Bar Style */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+
+        header {
+            padding: 60px 20px;
+            background: rgb(11, 11, 11);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .logo {
+            width: 100px; /* Set logo size */
+            position: center;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #ff4081;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e91e63;
+            transform: scale(1.10);
+        }
+        .content {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            font-size: 3em;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.3em;
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            border-radius: 12px;
+            max-width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .table-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            font-size: 1.1em;
+            border: 1px solid #fff;
+        }
+        th {
+            background-color: #ff4081;
+        }
+        td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        footer {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header id="home">
+        <img src="https://wallpaper.dog/large/20527693.jpg" alt="Logo" class="logo">
+        <h1>Brain Image Fusion: Graphs and Tables</h1>
+        <p>Graphical and tabular analysis of brain images showcasing structural, functional, and fused data representations.</p>
+    </header>
+    <hr>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="structuralbrainimage.html">Structural Imaging</a></li>
+            <li><a href="functionalbrainimage.html">Functional Imaging</a></li>
+            <li><a href="fusedimage.html">Fused Brain Image</a></li>
+            <li><a href="tablesgraphs.html">Meet Our Team</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Graphical Representation of Brain Image Fusion</h2>
+        <p>This section presents the graphical analysis of the structural and functional aspects of the brain images used in this project. Graphs provide a clear representation of the variations in brain structure and activity, helping in a better understanding of the fusion process.</p>
+
+        <h3>Structural Brain Image Representation</h3>
+        <p>This graph showcases the variations in intensity across different brain regions, highlighting key anatomical features.</p>
+
+        <!-- Image for Structural Brain Graph -->
+        <div class="image-container">
+            <img src="graphstructure.jpg" alt="Structural Brain Graph">
+        </div>
+
+        <h3>Functional Brain Activity Representation</h3>
+        <p>The second graph visualizes fluctuations in brain activity levels, helping to differentiate active and inactive regions.</p>
+
+        <!-- Image for Functional Brain Activity Graph -->
+        <div class="image-container">
+            <img src="graphfunctionalk.jpg" alt="Functional Brain Activity Graph">
+        </div>
+
+        <h3>Comparison of Structural and Functional Data</h3>
+        <p>A combined graph represents the fusion of both structural and functional images, demonstrating how both aspects complement each other in medical analysis.</p>
+
+        <!-- Image for Comparison Graph -->
+        <div class="image-container">
+            <img src="strfungraph.jpg" alt="Comparison of Structural and Functional Data">
+        </div>
+
+        <h2>Tabular Representation of Brain Image Data</h2>
+        <p>The tables below provide detailed insights into the data derived from the structural and functional brain images, as well as the fused image.</p>
+
+        <h3>Structural Brain Image Data</h3>
+        <p>This table outlines the key parameters of the structural image, including spatial details and intensity variations across different brain regions.</p>
+
+        <!-- Structural Brain Image Data Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Intensity</th>
+                        <th>Coordinates (X, Y, Z)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontal Lobe</td>
+                        <td>0.85</td>
+                        <td>(30, 60, 40)</td>
+                    </tr>
+                    <tr>
+                        <td>Occipital Lobe</td>
+                        <td>0.78</td>
+                        <td>(10, 55, 50)</td>
+                    </tr>
+                    <tr>
+                        <td>Temporal Lobe</td>
+                        <td>0.92</td>
+                        <td>(40, 70, 45)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Functional Brain Image Data</h3>
+        <p>This table represents the properties of the functional brain image, including activation levels and signal variations.</p>
+
+        <!-- Functional Brain Image Data Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Activation Level</th>
+                        <th>Signal Variation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontal Lobe</td>
+                        <td>0.75</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Occipital Lobe</td>
+                        <td>0.68</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Temporal Lobe</td>
+                        <td>0.80</td>
+                        <td>Low</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Fused Brain Image Data</h3>
+        <p>The final table provides an overview of how the fusion process combines structural and functional properties, highlighting the advantages of brain-image fusion.</p>
+
+        <!-- Fused Brain Image Data Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Fusion Intensity</th>
+                        <th>Functional Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Frontal Lobe</td>
+                        <td>0.90</td>
+                        <td>High Impact</td>
+                    </tr>
+                    <tr>
+                        <td>Occipital Lobe</td>
+                        <td>0.80</td>
+                        <td>Medium Impact</td>
+                    </tr>
+                    <tr>
+                        <td>Temporal Lobe</td>
+                        <td>0.85</td>
+                        <td>Low Impact</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy;2025 Brain Image Fusion Project | All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

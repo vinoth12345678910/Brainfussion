@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Image Fusion Project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/premium-photo/curvy-narrow-muddy-road-dark-forest-surrounded_636537-26896.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        /* Navigation Bar Style */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+
+        header {
+            padding: 60px 20px;
+            background: rgb(11, 11, 11);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .logo {
+            width: 100px; /* Set logo size */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #ff4081;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e91e63;
+            transform: scale(1.10);
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 60px 20px;
+            gap: 25px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px;
+            border-radius: 12px;
+            width: 320px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease-in-out; /* Hover effect transition */
+        }
+        .card:hover {
+            transform: scale(1.1); /* Scale up on hover */
+            cursor: pointer; /* Change cursor to indicate hover */
+        }
+        .team {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .team h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .team p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        footer {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header id="home">
+        <img src="https://wallpaper.dog/large/20527693.jpg" alt="Logo" class="logo">
+        <h1 class="fade-in">Brain Image Fusion</h1>
+        <p class="slide-in">Unlocking the potential of structural and functional brain imaging.</p>
+        
+    </header>
+    <hr>
+
+    <!-- Navigation Bar Below Header -->
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="structuralbrainimage.html">Structural Imaging</a></li>
+            <li><a href="functionalbrainimage.html">Functional Imaging</a></li>
+            <li><a href="fusedimage.html">Fused Brain Image</a></li>
+            <li><a href="tablesgraphs.html">Meet Our Team</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Content Section (removed "Explore" part as requested) -->
+    <section class="content">
+        <div class="card" id="structural">
+            <h2>Structural Imaging</h2>
+            <p>Analyzing the brain's anatomy with high-precision MRI and CT scans. Structural imaging provides critical insights into brain morphology, helping diagnose conditions such as tumors, strokes, and degenerative diseases.</p>
+        </div>
+        <div class="card" id="functional">
+            <h2>Functional Imaging</h2>
+            <p>Investigating neural activity using PET and fMRI techniques. Functional imaging maps brain activity, showing how different regions respond to stimuli, which is crucial for understanding neurological disorders and cognitive functions.</p>
+        </div>
+        <div class="card" id="fused">
+            <h2>Fused Brain Image</h2>
+            <p>Integrating both imaging methods for enhanced medical diagnosis. Fusion of structural and functional imaging enhances the accuracy of disease detection, surgical planning, and neuroscience research.</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <h2>Meet Our Team</h2>
+        <p>Vinay Anand - <strong>RA2211013020008</strong></p>
+        <p>Gayathri D - <strong>RA2211013020061</strong></p>
+        <p>Aarav Kannan - <strong>RA2211013020066</strong></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Brain Image Fusion Project | All Rights Reserved</p>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.from(".fade-in", { opacity: 0, duration: 1.5, y: -50 });
+        gsap.from(".slide-in", { opacity: 0, duration: 1.5, x: -100, delay: 0.5 });
+        gsap.from(".btn", { opacity: 0, scale: 0.5, duration: 1, delay: 1 });
+        gsap.from(".card", { opacity: 0, scale: 0.85, duration: 1, stagger: 0.3, delay: 1.5 });
+        gsap.from(".team", { opacity: 0, y: 50, duration: 1.5, delay: 2 });
+    </script>
+</body>
+</html>

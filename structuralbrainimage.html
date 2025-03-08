@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Brain Image and Its Generation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://img.freepik.com/premium-photo/curvy-narrow-muddy-road-dark-forest-surrounded_636537-26896.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        /* Navigation Bar Style */
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff4081;
+        }
+
+        header {
+            padding: 60px 20px;
+            background: rgb(11, 11, 11);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .logo {
+            width: 100px; /* Set logo size */
+            position: center;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 3s ease-in-out infinite; /* Floating animation */
+        }
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-15px); }
+            100% { transform: translateX(-50%) translateY(0); }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: #ff4081;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background: #e91e63;
+            transform: scale(1.10);
+        }
+        .content {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            font-size: 3em;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.3em;
+            max-width: 900px;
+            text-align: left;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .code-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin-bottom: 40px;
+            color: #d1d1d1;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            border-radius: 12px;
+            max-width: 100%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.9);
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header id="home">
+        <img src="https://wallpaper.dog/large/20527693.jpg" alt="Logo" class="logo">
+        <h1>Structural Brain Image and Its Generation</h1>
+        <p>Creating detailed brain images for diagnostic and research purposes using MATLAB.</p>
+    </header>
+    <hr>
+
+    <!-- Navigation Bar Below Header -->
+    <nav>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="structuralbrainimage.html">Structural Imaging</a></li>
+            <li><a href="functionalbrainimage.html">Functional Imaging</a></li>
+            <li><a href="fusedimage.html">Fused Brain Image</a></li>
+            <li><a href="tablesgraphs.html">Tables & Graphs</a></li>
+        </ul>
+    </nav>
+    <hr>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Structural Brain Image and Its Generation Using MATLAB</h2>
+        <p>A structural brain image is a detailed representation of the brain's anatomy, highlighting different tissues, structures, and any possible abnormalities. It is widely used in medical research and diagnostics to analyze brain morphology, detect tumors, or plan surgeries.</p>
+        
+        <h3><u>Generating a Structural Brain Image Using MATLAB</u></h3>
+        <p>To generate a structural brain image in MATLAB, we followed a systematic approach using built-in MRI datasets and image processing techniques. The key steps are as follows:</p>
+        <ul>
+            <li><strong>1. Loading the MRI Dataset</strong><br>
+            We utilized MATLAB’s built-in MRI dataset, which contains a series of 2D slices representing different sections of the brain. We extracted a specific slice that provides a clear anatomical structure.</li>
+
+            <li><strong>2. Preprocessing the Image</strong><br>
+            The extracted slice was converted into grayscale using MATLAB’s mat2gray function to normalize intensity values. Noise reduction techniques (if required) were applied to enhance clarity.</li>
+
+            <li><strong>3. Adding a Tumor (Synthetic Anomaly)</strong><br>
+            To simulate a real-world medical case, we created a synthetic tumor using mathematical functions like meshgrid. The tumor was designed as a circular bright spot within the brain image, mimicking abnormal growth.</li>
+
+            <li><strong>4. Displaying the Structural Image</strong><br>
+            Finally, the processed image was displayed using imshow(), allowing us to visualize the brain’s structure along with the simulated tumor.</li>
+        </ul>
+
+        <div class="code-container">
+            <h3>MATLAB Code to Generate the Structural Brain Image</h3>
+            <pre>
+% Load a sample MRI image from MATLAB's built-in dataset
+load mri; % Built-in MRI data
+D = squeeze(D); % Convert the 4D data to 3D
+
+% Extract one slice of the brain from the dataset
+brainImage = mat2gray(D(:,:,15)); % Slice 15 (choose a slice with a clear brain)
+
+% Add a synthetic tumor to the brain image
+[xGrid, yGrid] = meshgrid(1:size(brainImage, 2), 1:size(brainImage, 1));
+tumor = ((xGrid - 60).^2 + (yGrid - 80).^2) <= 50; % Circular tumor
+brainImage(tumor) = 1; % Bright tumor intensity
+
+% Display the final brain image with the tumor
+imshow(brainImage, []);
+title('Realistic Brain Image with Tumor');
+            </pre>
+        </div>
+
+        <h3>Visual Representation</h3>
+        <div class="image-container">
+            <!-- You can insert your image link here -->
+            <img src="structure.jpg" alt="Structural Brain Image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Brain Image Fusion Project| All Rights Reserved</p>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+        gsap.from(".fade-in", { opacity: 0, duration: 1.5, y: -50 });
+        gsap.from(".slide-in", { opacity: 0, duration: 1.5, x: -100, delay: 0.5 });
+        gsap.from(".btn", { opacity: 0, scale: 0.5, duration: 1, delay: 1 });
+        gsap.from(".card", { opacity: 0, scale: 0.85, duration: 1, stagger: 0.3, delay: 1.5 });
+        gsap.from(".team", { opacity: 0, y: 50, duration: 1.5, delay: 2 });
+    </script>
+</body>
+</html>
